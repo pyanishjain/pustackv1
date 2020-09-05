@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pustackv1/image_detail.dart';
+import 'package:pustackv1/subscription.dart';
 import 'package:pustackv1/ui/search_screen.dart';
 import 'package:path/path.dart' show join;
 import 'package:pustackv1/ui/widgets/appbar.dart';
@@ -264,10 +265,6 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
 
   /// Display a row of toggle to select the camera (or a message if no camera is available).
   Widget _cameraTogglesRowWidget() {
-    // final List<Widget> toggles = <Widget>[];
-
-    // final Center toggles = Center();
-
     if (cameras.isEmpty) {
       return const Text('No camera found');
     } else if (controller == null || !controller.value.isInitialized) {
@@ -369,7 +366,7 @@ class CameraApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CameraExampleHome(),
+      home: SubcriptionPage(),
     );
   }
 }
